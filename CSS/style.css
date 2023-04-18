@@ -38,7 +38,7 @@
     position: absolute;
     width: 700px;
     height: 200px;
-    animation: clouds-animation 2s linear;
+    animation: clouds-animation 20s linear;
 }
 
 
