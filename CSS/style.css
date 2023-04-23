@@ -44,8 +44,10 @@
 
 #btn-reload{
     position: absolute;
-    left: 0;
+    width: 8vh;
+
 }
+
 
 /* estilos para dispositivos móveis */
 @media only screen and (max-width: 768px) {
