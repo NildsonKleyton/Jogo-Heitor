@@ -1,6 +1,6 @@
 const play = document.querySelector('.play');
 const pipe = document.querySelector('.pipe');
-const terrain = document.querySelector('.terrain')
+const terrain = document.querySelector('.terrain');
 const imgReload = document.querySelector('#btn-reload');
 const btnReload = document.querySelector('#btn-reload');
 const jump = () => {
@@ -15,7 +15,7 @@ const loop = setInterval(() =>{
     const playPosition = +window.getComputedStyle(play).bottom.replace('px', '');
     const terrainPosition  = terrain.offsetLeft;
 
-    if(pipePosition <= 110 && pipePosition > 0 && playPosition <80){
+    if(pipePosition <= 85 && pipePosition > 0 && playPosition <165){
         
         pipe.style.animation = 'none';
         pipe.style.left = `${pipePosition}px`;
@@ -24,8 +24,8 @@ const loop = setInterval(() =>{
         play.style.bottom = `${playPosition}px`;
 
         play.src='./Images/playOver.png';
-        play.style.width = '110px';
-        play.style.marginLeft = '15px'; 
+        play.style.width = '100px';
+        play.style.marginLeft = '-5px'; 
         play.style.marginBottom = '-5px';
 
         imgReload.src='./Images/recaregar.png';

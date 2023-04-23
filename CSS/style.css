@@ -32,7 +32,7 @@
 
 .play {
     position: absolute;
-    width: 140px;
+    width: 90px;
     bottom:var(--px-bottom);
 }
 
@@ -50,10 +50,9 @@
 
 .terrain{
     position: absolute;
-
     height: 72px;
     bottom: 0;
-    animation: clouds-animation 2.9s infinite linear;
+    animation: terrain-animation 2.9s infinite linear;
 }
 
 #btn-reload{
@@ -109,7 +108,7 @@
         bottom:180px;
     }
 
-    40% {
+    60% {
         bottom: 200px;
     }
 
@@ -136,7 +135,7 @@
 
 @keyframes terrain-animation {
     from{
-        right: 807px;
+        right: 27px;
     }
 
     to{
