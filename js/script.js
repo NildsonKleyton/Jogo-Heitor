@@ -1,7 +1,8 @@
 const play = document.querySelector('.play');
 const pipe = document.querySelector('.pipe');
-const imgReload = document.querySelector('btn-reload');
-
+const terrain = document.querySelector('.terrain')
+const imgReload = document.querySelector('#btn-reload');
+const btnReload = document.querySelector('#btn-reload');
 const jump = () => {
     play.classList.add('jump')
     setTimeout(()=>{
@@ -12,6 +13,7 @@ const jump = () => {
 const loop = setInterval(() =>{
     const pipePosition = pipe.offsetLeft;
     const playPosition = +window.getComputedStyle(play).bottom.replace('px', '');
+    const terrainPosition  = terrain.offsetLeft;
 
     if(pipePosition <= 110 && pipePosition > 0 && playPosition <80){
         
@@ -26,9 +28,12 @@ const loop = setInterval(() =>{
         play.style.marginLeft = '15px'; 
         play.style.marginBottom = '-5px';
 
-        imgReload.src='./Images/recaregar.png'.class='btn-reload';
+        imgReload.src='./Images/recaregar.png';
+
+        terrain.style.animation = 'none';
+        terrain.style.left = `${terrainPosition}px`;
         
-        clearInterval(loop)//para o loop
+        clearInterval(loop);//para o loop
     }
 
 
@@ -40,9 +45,11 @@ document.addEventListener('click', jump);
 document.addEventListener('touchstart', jump);
 
 // Obtém o botão por seu ID
-const btnReload = document.getElementById('btn-reload');
 
-// Define o ouvinte de eventos para o clique no botão
+
+// Define a execução do do botão reload
 btnReload.addEventListener('click', function() {
-  location.reload(); // Recarrega a página
+    if (imgReload.src.endsWith('/recaregar.png')) {
+        location.reload(); // Recarrega a página se a imagem for a correta
+      }
 });
