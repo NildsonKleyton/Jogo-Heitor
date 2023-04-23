@@ -8,7 +8,6 @@ const jump = () => {
     },500)
 }
 
-
 const loop = setInterval(() =>{
     const pipePosition = pipe.offsetLeft;
     const playPosition = +window.getComputedStyle(play).bottom.replace('px', '');
@@ -32,6 +31,15 @@ const loop = setInterval(() =>{
 
 },20);
 
+// Adiciona um ouvinte de eventos para o tecla pressionada, clique com mouse e toque na tela
 document.addEventListener('keydown', jump);
 document.addEventListener('click', jump);
 document.addEventListener('touchstart', jump);
+
+// Obtém o botão por seu ID
+const btnReload = document.getElementById('btn-reload');
+
+// Define o ouvinte de eventos para o clique no botão
+btnReload.addEventListener('click', function() {
+  location.reload(); // Recarrega a página
+});

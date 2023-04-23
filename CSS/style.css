@@ -42,10 +42,16 @@
     animation: clouds-animation 20s infinite linear;
 }
 
+#btn-reload{
+    position: absolute;
+    left: 0;
+}
+
 /* estilos para dispositivos móveis */
 @media only screen and (max-width: 768px) {
     .game-board {
-        height: 40vh;
+        height: 100vh;
+        width: 100%;
     }
 
     .pipe {
@@ -64,7 +70,7 @@
 }
 
 
-/* animação */
+/* animação*/
 @keyframes pipe-animation {
 
     from {
