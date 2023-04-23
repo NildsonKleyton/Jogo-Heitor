@@ -9,9 +9,10 @@
 
 .game-board {
     width: 100%;
-    height: 60vh;
+    height: 99vh;
     border: 10px solid #11c220;
     margin: 10px auto;
+    padding: 0%;
     position: relative;
     overflow: hidden;
     background: linear-gradient(#87defd,#f1fdff);
@@ -40,6 +41,7 @@
     width: 700px;
     height: 200px;
     animation: clouds-animation 20s infinite linear;
+    z-index: 1;
 }
 
 #btn-reload{

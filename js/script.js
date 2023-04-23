@@ -1,5 +1,6 @@
 const play = document.querySelector('.play');
 const pipe = document.querySelector('.pipe');
+const imgReload = document.querySelector('btn-reload');
 
 const jump = () => {
     play.classList.add('jump')
@@ -20,10 +21,12 @@ const loop = setInterval(() =>{
         play.style.animation = 'none';
         play.style.bottom = `${playPosition}px`;
 
-        play.src='./Images/playOver.png'
+        play.src='./Images/playOver.png';
         play.style.width = '110px';
-        play.style.marginLeft = '15px' 
-        play.style.marginBottom = '-5px'
+        play.style.marginLeft = '15px'; 
+        play.style.marginBottom = '-5px';
+
+        imgReload.src='./Images/recaregar.png'.class='btn-reload';
         
         clearInterval(loop)//para o loop
     }
