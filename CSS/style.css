@@ -32,7 +32,7 @@
 
 .play {
     position: absolute;
-    width: 90px;
+    width: 6rem;
     bottom:var(--px-bottom);
 }
 

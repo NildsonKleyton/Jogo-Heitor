@@ -24,7 +24,7 @@ const loop = setInterval(() =>{
         play.style.bottom = `${playPosition}px`;
 
         play.src='./Images/playOver.png';
-        play.style.width = '100px';
+        play.style.width = '6.5em';
         play.style.marginLeft = '-5px'; 
         play.style.marginBottom = '-5px';
 
