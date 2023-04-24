@@ -30,14 +30,14 @@
     animation: pipe-animation 1.6s infinite linear;
 }
 
-.play {
+.player {
     position: absolute;
     width: 6rem;
     bottom:var(--px-bottom);
 }
 
 .jump{
-    animation: jumpPlay 500ms ease-out;
+    animation: jumpplayer 500ms ease-out;
 }
 
 .clouds{
@@ -74,7 +74,7 @@
         width: 50px;
     }
 
-    .play {
+    .player {
         width: 100px;
     }
 
@@ -97,7 +97,7 @@
     }
 }
 
-@keyframes jumpPlay {
+@keyframes jumpplayer {
 
     0% {
         bottom: var(--px-bottom);
@@ -105,15 +105,15 @@
 
 
     40% {
-        bottom:180px;
+        bottom:200px;
     }
 
     60% {
-        bottom: 200px;
+        bottom: 220px;
     }
 
     80% {
-        bottom: 180px;
+        bottom: 200px;
     }
 
     100% {
