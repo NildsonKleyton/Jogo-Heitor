@@ -12,8 +12,8 @@
 /* estilos padrão para desktop */
 
 .game-board {
-    width: 750px;
-    height: 99vh;
+    width: 700px;
+    /* height: 90vh; */
     border: 10px solid #11c220;
     margin: 10px auto;
     padding: 0%;
