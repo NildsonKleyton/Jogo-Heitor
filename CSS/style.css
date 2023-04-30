@@ -1,25 +1,26 @@
 /*Variaveis globais*/
-:root{
+:root {
     --px-bottom: 70px;
 }
+
 /* resetar */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
+}
 
 /* estilos padrão para desktop */
 
 .game-board {
-    width: 750px;
+    width: 600px;
     height: 90vh;
     border: 10px solid #11c220;
     margin: 10px auto;
     padding: 0%;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(#87defd,#f1fdff);
+    background: linear-gradient(#87defd, #f1fdff);
 }
 
 .pipe {
@@ -33,14 +34,14 @@
 .player {
     position: absolute;
     width: 6rem;
-    bottom:var(--px-bottom);
+    bottom: var(--px-bottom);
 }
 
-.jump{
+.jump {
     animation: jumpplayer 500ms ease-out;
 }
 
-.clouds{
+.clouds {
     position: absolute;
     width: 700px;
     height: 200px;
@@ -48,14 +49,14 @@
     z-index: 1;
 }
 
-.terrain{
+.terrain {
     position: absolute;
     height: 72px;
     bottom: 0;
     animation: terrain-animation 2.9s infinite linear;
 }
 
-#btn-reload{
+.imgReload {
     position: absolute;
     width: 8vh;
     z-index: 92;
@@ -105,7 +106,7 @@
 
 
     40% {
-        bottom:200px;
+        bottom: 200px;
     }
 
     60% {
@@ -123,24 +124,23 @@
 }
 
 @keyframes clouds-animation {
-    from{
+    from {
         right: -710px;
     }
 
-    to{
+    to {
         right: 100%;
     }
-    
+
 }
 
 @keyframes terrain-animation {
-    from{
-        right: 27px;
+    from {
+        right: -700px;
     }
 
-    to{
+    to {
         right: 100%;
     }
-    
-}
 
+}
