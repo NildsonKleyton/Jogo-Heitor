@@ -50,15 +50,18 @@
     z-index: 1;
 }
 
-.terrain {
+.terrain-container {
     position: absolute;
-    height: 72px;
     bottom: 0;
-    animation-name: terrain-animation;  
-    animation-duration: 2.9s;
-    animation-iteration-count: infinite;
-    animation-fill-mode:  linear;
-}
+    width: 200%;
+    height: 72px;
+  }
+  
+  .terrain {
+    width: 50%;
+    height: 100%;
+    float: left;
+  }
 
 .imgReload {
     position: absolute;
@@ -68,28 +71,6 @@
     z-index: 92;
 }
 
-
-/* estilos para dispositivos móveis */
-/* @media only screen and (max-width: 768px) {
-    .game-board {
-        width: 600px;
-        height: 90vh;
-    }
-
-    .pipe {
-        height: 60px;
-        width: 50px;
-    }
-
-    .player {
-        width: 100px;
-    }
-
-    .clouds {
-        width: 300px;
-        height: 100px;
-    }
-} */
 
 
 /* animação*/

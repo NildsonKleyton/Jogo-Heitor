@@ -9,6 +9,12 @@ const jump = () => {
     }, 500)
 }
 
+const terrainContainer = document.querySelector('.terrain-container');
+const terrainImages = document.querySelectorAll('.terrain');
+
+let terrainPosition = 0;
+let terrainSpeed = 8
+
 const loop = setInterval(() => {
     const pipePosition = pipe.offsetLeft;
     const playerPosition = +window.getComputedStyle(player).bottom.replace('px', '');
@@ -29,8 +35,7 @@ const loop = setInterval(() => {
 
         imgReload.src = './Images/recaregar.png';
 
-        terrain.style.animation = 'none';
-        terrain.style.left = `${terrainPosition}px`;
+        terrainSpeed = 0;
 
         clearInterval(loop);//para o loop
     }
@@ -43,8 +48,6 @@ document.addEventListener('keydown', jump);
 document.addEventListener('click', jump);
 document.addEventListener('touchstart', jump);
 
-// Obtém o botão por seu ID
-
 
 // Define a execução do do botão reload
 imgReload.addEventListener('click', function () {
@@ -52,3 +55,15 @@ imgReload.addEventListener('click', function () {
         location.reload(); // Recarrega a página se a imagem for a correta
     }
 });
+
+const moveTerrain = () => {
+    terrainPosition -= terrainSpeed;
+    terrainContainer.style.left = terrainPosition + 'px';
+  
+    if (terrainPosition <= -terrainImages[0].width) {
+      terrainPosition += terrainImages[0].width;
+      terrainContainer.appendChild(terrainImages[0]);
+    }
+  }
+  
+  setInterval(moveTerrain, 20);
