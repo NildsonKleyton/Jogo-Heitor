@@ -8,12 +8,11 @@ const jump = () => {
         player.classList.remove('jump')
     }, 500)
 }
-
+//terra em carrosel animado
 const terrainContainer = document.querySelector('.terrain-container');
 const terrainImages = document.querySelectorAll('.terrain');
-
 let terrainPosition = 0;
-let terrainSpeed = 8
+let terrainSpeed = 8;
 
 const loop = setInterval(() => {
     const pipePosition = pipe.offsetLeft;
@@ -56,6 +55,7 @@ imgReload.addEventListener('click', function () {
     }
 });
 
+//terra em carrosel animado
 const moveTerrain = () => {
     terrainPosition -= terrainSpeed;
     terrainContainer.style.left = terrainPosition + 'px';
