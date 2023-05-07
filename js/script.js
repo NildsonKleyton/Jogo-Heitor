@@ -2,6 +2,7 @@ const player = document.querySelector('.player');
 const pipe = document.querySelector('.pipe');
 const terrain = document.querySelector('.terrain');
 const imgReload = document.querySelector('.imgReload');
+const clouds = document.querySelector('.clouds');
 const jump = () => {
     player.classList.add('jump')
     setTimeout(() => {
@@ -13,13 +14,22 @@ const terrainContainer = document.querySelector('.terrain-container');
 const terrainImages = document.querySelectorAll('.terrain');
 let terrainPosition = 0;
 let terrainSpeed = 8;
+let score = 0;
+
+const updateScore = () => {
+    score++;
+    document.getElementById("scoreValue").innerText = score;
+}
 
 const loop = setInterval(() => {
     const pipePosition = pipe.offsetLeft;
     const playerPosition = +window.getComputedStyle(player).bottom.replace('px', '');
-    const terrainPosition = terrain.offsetLeft;
+    const cloudsPosition = clouds.offsetLeft;
 
     if (pipePosition <= 85 && pipePosition > 0 && playerPosition < 165) {
+
+        clouds.style.animation = 'none';
+        clouds.style.left = `${cloudsPosition}px`;
 
         pipe.style.animation = 'none';
         pipe.style.left = `${pipePosition}px`;
@@ -37,8 +47,9 @@ const loop = setInterval(() => {
         terrainSpeed = 0;
 
         clearInterval(loop);//para o loop
+    } else if (pipePosition <= -60) {
+        updateScore();
     }
-
 
 }, 20);
 
@@ -59,11 +70,11 @@ imgReload.addEventListener('click', function () {
 const moveTerrain = () => {
     terrainPosition -= terrainSpeed;
     terrainContainer.style.left = terrainPosition + 'px';
-  
+
     if (terrainPosition <= -terrainImages[0].width) {
-      terrainPosition += terrainImages[0].width;
-      terrainContainer.appendChild(terrainImages[0]);
+        terrainPosition += terrainImages[0].width;
+        terrainContainer.appendChild(terrainImages[0]);
     }
-  }
-  
-  setInterval(moveTerrain, 20);
+}
+
+setInterval(moveTerrain, 20);
