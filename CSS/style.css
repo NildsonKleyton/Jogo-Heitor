@@ -132,8 +132,128 @@
 }
 
 @media (max-width: 768px) {
-    .game-board {
-      width: 100%;
-      height: 100%;
+/* Variaveis globais */
+:root {
+    --px-bottom: 70px;
+}
+
+/* resetar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* estilos padrão para smartphones and desktops */
+
+.game-board {
+    width: 100%;
+    height: 100vh;
+    border: 10px solid #11c220;
+    margin: 0 auto;
+    padding: 0%;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87defd, #f1fdff);
+}
+
+.pipe {
+    position: absolute;
+    bottom: var(--px-bottom);
+    height: 80px;
+    width: 70px;
+    animation: pipe-animation 1.6s infinite linear;
+}
+
+.player {
+    position: absolute;
+    left: 10px;
+    width: 6rem;
+    bottom: var(--px-bottom);
+}
+
+.jump {
+    animation: jumpplayer 500ms ease-out;
+}
+
+.clouds {
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    animation: clouds-animation 20s infinite linear;
+    z-index: 0;
+}
+
+/* terra em carrosel animado */
+.terrain-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 72px;
+}
+
+.terrain {
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.imgReload {
+    position: absolute;
+    top: .2rem;
+    left: .2em;
+    width: 8vh;
+    z-index: 1;
+}
+
+.score {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    padding: 2px;
+    background-color: rgba(113, 114, 112, 0.589);
+    border-radius: 5px;
+    z-index: 1;
+}
+
+/* animações */
+@keyframes pipe-animation {
+    from {
+        right: -60px;
     }
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes jumpplayer {
+    0% {
+        bottom: var(--px-bottom);
+    }
+    20% {
+        bottom: 200px;
+    }
+    60% {
+        bottom: 220px;
+    }
+    85% {
+        bottom: 200px;
+    }
+    100% {
+        bottom: var(--px-bottom);
+    }
+}
+
+@keyframes clouds-animation {
+    from {
+        right: -710px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
   }
