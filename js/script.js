@@ -12,6 +12,7 @@ const jump = () => {
 //terra em carrosel animado
 const terrainContainer = document.querySelector('.terrain-container');
 const terrainImages = document.querySelectorAll('.terrain');
+
 let terrainPosition = 0;
 let terrainSpeed = 8;
 let score = 0;
@@ -59,7 +60,7 @@ document.addEventListener('click', jump);
 document.addEventListener('touchstart', jump);
 
 
-// Define a execução do do botão reload
+// Define a execução do botão reload
 imgReload.addEventListener('click', function () {
     if (imgReload.src.endsWith('/recaregar.png')) {
         location.reload(); // Recarrega a página se a imagem for a correta
