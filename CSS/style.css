@@ -133,7 +133,7 @@
 
 @media (max-width: 768px) {
     .game-board {
-      width: 100%;
+      width: 100vh;
       height: 100vh;
     }
   }
